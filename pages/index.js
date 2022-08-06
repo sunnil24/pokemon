@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import {
   API_ENDPOINT_POKEMON_LIST,
   API_POKEMON_IMAGE,
+  MIN_POKEMON_ON_PAGE,
 } from "../src/constants/api";
 import styles from "../styles/Home.module.css";
 import Search from "../src/components/search";
@@ -21,6 +22,7 @@ export async function getServerSideProps() {
 
 export default function Home({ pokemons }) {
   const [pokemonList, updatePokenList] = useState([]);
+  const [currentCount, setCurrentCount] = useState(MIN_POKEMON_ON_PAGE);
 
   useEffect(() => {
     updatePokenList(pokemons);
@@ -30,6 +32,12 @@ export default function Home({ pokemons }) {
     const regex = new RegExp(text, "ig");
     updatePokenList(pokemons.filter((pokemon) => regex.test(pokemon.name)));
   };
+
+  const handlePagination = useCallback(() => {
+    setCurrentCount(currentCount + MIN_POKEMON_ON_PAGE);
+  }, [currentCount]);
+
+  const paginationPokmon = pokemonList.slice(0, currentCount);
 
   return (
     <div className={styles.container}>
@@ -41,7 +49,7 @@ export default function Home({ pokemons }) {
         <h1 className={classNames(styles.title)}>Favorite Pokemon</h1>
         <Search searchHandler={handleSearch} />
         <div className={styles.grid}>
-          {pokemonList.map(({ id, image, name }) => (
+          {paginationPokmon.map(({ id, image, name }) => (
             <Link href={`/pokemon/${encodeURIComponent(id)}`} key={id}>
               <a className={styles.card}>
                 <img src={`${API_POKEMON_IMAGE}/${image}`} alt={name} />
@@ -50,6 +58,11 @@ export default function Home({ pokemons }) {
             </Link>
           ))}
         </div>
+        {pokemonList.length > currentCount && (
+          <button className={styles.loadmore} onClick={handlePagination}>
+            Load More
+          </button>
+        )}
       </main>
     </div>
   );

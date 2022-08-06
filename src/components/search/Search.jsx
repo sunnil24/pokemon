@@ -1,39 +1,31 @@
+import classNames from "classnames";
 import React, { useCallback, useState } from "react";
 
-import styles from "../../../styles/search.module.css";
+import styles from "../../../styles/Search.module.css";
 
 const Search = ({ searchHandler }) => {
-  const [value, setValue] = useState("");
+  const handleSearch = (e) => {
+    const value = e.target.value || "";
+    e.preventDefault();
+    searchHandler(value);
+  };
 
-  const handleSearch = useCallback(
-    (e) => {
-      e.preventDefault();
-      searchHandler(value);
-    },
-    [value]
-  );
-
-  const handleInput = useCallback((e) => {
-    setValue(e.target.value || "");
-  }, []);
+  const handleInput = (e) => {
+    const value = e.target.value || "";
+    searchHandler(value);
+  };
 
   return (
     <div className={styles.container}>
       <form onSubmit={handleSearch}>
-        <h1 className="underline py-2 outline outline-offset-2 outline-1 border border-gray-800 bg-gray-300">
-          Favorite Pokemon
-        </h1>
-
         <input
           type="search"
           onChange={handleInput}
-          value={value}
-          className="underline py-2 outline outline-offset-2 outline-1 border border-gray-800 bg-gray-300"
+          className={classNames(styles.input)}
+          placeholder="Enter pokemon name"
+          defaultValue=""
         />
-        <button
-          type="submit"
-          className="underline py-2 outline outline-offset-2 outline-1 border border-gray-800 bg-gray-300"
-        >
+        <button className={styles.button} type="submit">
           &#8594;
         </button>
       </form>
