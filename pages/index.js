@@ -19,6 +19,7 @@ import { loadPokemons } from "../src/utils";
 
 export async function getStaticProps(context) {
   const pokemons = await loadPokemons();
+  console.log(pokemons.length, "--pokemons");
   return {
     props: {
       pokemons,
@@ -27,12 +28,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ pokemons }) {
-  const [pokemonList, updatePokenList] = useState([]);
   const [currentCount, setCurrentCount] = useState(MIN_POKEMON_ON_PAGE);
-
-  useEffect(() => {
-    updatePokenList(pokemons);
-  }, [pokemons]);
 
   const handleSearch = (text) => {
     const regex = new RegExp(text, "ig");
@@ -43,7 +39,7 @@ export default function Home({ pokemons }) {
     setCurrentCount(currentCount + MIN_POKEMON_ON_PAGE);
   }, [currentCount]);
 
-  const paginationPokmon = pokemonList.slice(0, currentCount);
+  const paginationPokmon = pokemons.slice(0, currentCount);
 
   return (
     <div className={styles.container}>
@@ -64,7 +60,7 @@ export default function Home({ pokemons }) {
             </Link>
           ))}
         </div>
-        {pokemonList.length > currentCount && (
+        {pokemons.length > currentCount && (
           <button className={styles.loadmore} onClick={handlePagination}>
             Load More
           </button>
