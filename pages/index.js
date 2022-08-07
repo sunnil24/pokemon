@@ -6,7 +6,8 @@ import { API_POKEMON_IMAGE, MIN_POKEMON_ON_PAGE } from "../src/constants/api";
 import styles from "../styles/Home.module.css";
 import Search from "../src/components/search";
 import classNames from "classnames";
-import { loadPokemons } from "../src/utils";
+import { imageLoader, loadPokemons } from "../src/utils";
+import Image from "next/image";
 
 // export async function getServerSideProps() {
 //   const data = await fetch(API_ENDPOINT_POKEMON_LIST);
@@ -19,7 +20,6 @@ import { loadPokemons } from "../src/utils";
 
 export async function getStaticProps(context) {
   const pokemons = await loadPokemons();
-  console.log(pokemons.length, "--pokemons");
   return {
     props: {
       pokemons,
@@ -52,9 +52,15 @@ export default function Home({ pokemons }) {
         <Search searchHandler={handleSearch} />
         <div className={styles.grid}>
           {paginationPokmon.map(({ id, image, name }) => (
-            <Link href={`/pokemon/${encodeURIComponent(id)}`} key={id}>
+            <Link href={`./pokemon/${encodeURIComponent(id)}`} key={id}>
               <a className={styles.card}>
-                <img src={`${API_POKEMON_IMAGE}/${image}`} alt={name} />
+                <Image
+                  src={image}
+                  alt={name}
+                  loader={imageLoader}
+                  width="300"
+                  height="300"
+                />
                 <h2>{name}</h2>
               </a>
             </Link>

@@ -2,7 +2,7 @@
   "name": "pokemon",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sunnil24.github.io/pokemons",
+  "homepage": "https://sunnil24.github.io/pokemon",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",

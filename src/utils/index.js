@@ -1,4 +1,4 @@
-import { API_ENDPOINT_POKEMON_LIST } from "../constants/api";
+import { API_ENDPOINT_POKEMON_LIST, API_POKEMON_IMAGE } from "../constants/api";
 
 export const loadPokemons = async () => {
   const data = await fetch(API_ENDPOINT_POKEMON_LIST);
@@ -14,4 +14,8 @@ export const loadPokemonDetails = async (params) => {
   const pokemon = await data.json();
 
   return pokemon;
+};
+
+export const imageLoader = ({ src }) => {
+  return `${API_POKEMON_IMAGE}/${src}`; // REPLACE WITH YOUR IMAGE DIRECTORY
 };
