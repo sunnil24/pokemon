@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Kadabra","type":["Psychic"],"stats":[{"name":"HP","value":40},{"name":"Attack","value":35},{"name":"Defense","value":30},{"name":"Special Attack","value":120},{"name":"Special Defense","value":70},{"name":"Speed","value":105}],"image":"images/kadabra.jpg"},"params":{"id":"64"}},"__N_SSG":true}

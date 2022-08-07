@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Hitmonchan","type":["Fighting"],"stats":[{"name":"HP","value":50},{"name":"Attack","value":105},{"name":"Defense","value":79},{"name":"Special Attack","value":35},{"name":"Special Defense","value":110},{"name":"Speed","value":76}],"image":"images/hitmonchan.jpg"},"params":{"id":"107"}},"__N_SSG":true}

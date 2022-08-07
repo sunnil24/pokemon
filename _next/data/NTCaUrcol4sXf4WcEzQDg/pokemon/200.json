@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Misdreavus","type":["Ghost"],"stats":[{"name":"HP","value":60},{"name":"Attack","value":60},{"name":"Defense","value":60},{"name":"Special Attack","value":85},{"name":"Special Defense","value":85},{"name":"Speed","value":85}],"image":"images/misdreavus.jpg"},"params":{"id":"200"}},"__N_SSG":true}

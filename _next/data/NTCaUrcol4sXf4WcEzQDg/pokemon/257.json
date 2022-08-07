@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Blaziken","type":["Fire","Fighting"],"stats":[{"name":"HP","value":80},{"name":"Attack","value":120},{"name":"Defense","value":70},{"name":"Special Attack","value":110},{"name":"Special Defense","value":70},{"name":"Speed","value":80}],"image":"images/blaziken.jpg"},"params":{"id":"257"}},"__N_SSG":true}

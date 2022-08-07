@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Poliwag","type":["Water"],"stats":[{"name":"HP","value":40},{"name":"Attack","value":50},{"name":"Defense","value":40},{"name":"Special Attack","value":40},{"name":"Special Defense","value":40},{"name":"Speed","value":90}],"image":"images/poliwag.jpg"},"params":{"id":"60"}},"__N_SSG":true}

@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Hoothoot","type":["Normal","Flying"],"stats":[{"name":"HP","value":60},{"name":"Attack","value":30},{"name":"Defense","value":30},{"name":"Special Attack","value":36},{"name":"Special Defense","value":56},{"name":"Speed","value":50}],"image":"images/hoothoot.jpg"},"params":{"id":"163"}},"__N_SSG":true}

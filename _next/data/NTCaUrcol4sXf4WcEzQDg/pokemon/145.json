@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Zapdos","type":["Electric","Flying"],"stats":[{"name":"HP","value":90},{"name":"Attack","value":90},{"name":"Defense","value":85},{"name":"Special Attack","value":125},{"name":"Special Defense","value":90},{"name":"Speed","value":100}],"image":"images/zapdos.jpg"},"params":{"id":"145"}},"__N_SSG":true}

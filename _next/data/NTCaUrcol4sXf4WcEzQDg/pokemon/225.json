@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Delibird","type":["Ice","Flying"],"stats":[{"name":"HP","value":45},{"name":"Attack","value":55},{"name":"Defense","value":45},{"name":"Special Attack","value":65},{"name":"Special Defense","value":45},{"name":"Speed","value":75}],"image":"images/delibird.jpg"},"params":{"id":"225"}},"__N_SSG":true}

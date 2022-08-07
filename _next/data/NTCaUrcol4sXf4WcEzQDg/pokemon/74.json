@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Geodude","type":["Rock","Ground"],"stats":[{"name":"HP","value":40},{"name":"Attack","value":80},{"name":"Defense","value":100},{"name":"Special Attack","value":30},{"name":"Special Defense","value":30},{"name":"Speed","value":20}],"image":"images/geodude.jpg"},"params":{"id":"74"}},"__N_SSG":true}

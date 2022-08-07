@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Excadrill","type":["Ground","Steel"],"stats":[{"name":"HP","value":110},{"name":"Attack","value":135},{"name":"Defense","value":60},{"name":"Special Attack","value":50},{"name":"Special Defense","value":65},{"name":"Speed","value":88}],"image":"images/excadrill.jpg"},"params":{"id":"530"}},"__N_SSG":true}

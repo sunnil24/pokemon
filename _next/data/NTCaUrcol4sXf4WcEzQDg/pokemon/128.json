@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Tauros","type":["Normal"],"stats":[{"name":"HP","value":75},{"name":"Attack","value":100},{"name":"Defense","value":95},{"name":"Special Attack","value":40},{"name":"Special Defense","value":70},{"name":"Speed","value":110}],"image":"images/tauros.jpg"},"params":{"id":"128"}},"__N_SSG":true}

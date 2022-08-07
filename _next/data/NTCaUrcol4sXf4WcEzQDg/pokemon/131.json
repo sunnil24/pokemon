@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Lapras","type":["Water","Ice"],"stats":[{"name":"HP","value":130},{"name":"Attack","value":85},{"name":"Defense","value":80},{"name":"Special Attack","value":85},{"name":"Special Defense","value":95},{"name":"Speed","value":60}],"image":"images/lapras.jpg"},"params":{"id":"131"}},"__N_SSG":true}

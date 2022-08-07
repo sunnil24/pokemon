@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Elekid","type":["Electric"],"stats":[{"name":"HP","value":45},{"name":"Attack","value":63},{"name":"Defense","value":37},{"name":"Special Attack","value":65},{"name":"Special Defense","value":55},{"name":"Speed","value":95}],"image":"images/elekid.jpg"},"params":{"id":"239"}},"__N_SSG":true}

@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Jumpluff","type":["Grass","Flying"],"stats":[{"name":"HP","value":75},{"name":"Attack","value":55},{"name":"Defense","value":70},{"name":"Special Attack","value":55},{"name":"Special Defense","value":95},{"name":"Speed","value":110}],"image":"images/jumpluff.jpg"},"params":{"id":"189"}},"__N_SSG":true}

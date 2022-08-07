@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Eevee","type":["Normal"],"stats":[{"name":"HP","value":55},{"name":"Attack","value":55},{"name":"Defense","value":50},{"name":"Special Attack","value":45},{"name":"Special Defense","value":65},{"name":"Speed","value":55}],"image":"images/eevee.jpg"},"params":{"id":"133"}},"__N_SSG":true}

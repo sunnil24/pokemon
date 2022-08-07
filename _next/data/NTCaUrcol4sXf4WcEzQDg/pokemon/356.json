@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Dusclops","type":["Ghost"],"stats":[{"name":"HP","value":40},{"name":"Attack","value":70},{"name":"Defense","value":130},{"name":"Special Attack","value":60},{"name":"Special Defense","value":130},{"name":"Speed","value":25}],"image":"images/dusclops.jpg"},"params":{"id":"356"}},"__N_SSG":true}

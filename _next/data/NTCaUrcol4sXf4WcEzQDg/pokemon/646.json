@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Kyurem","type":["Dragon","Ice"],"stats":[{"name":"HP","value":125},{"name":"Attack","value":130},{"name":"Defense","value":90},{"name":"Special Attack","value":130},{"name":"Special Defense","value":90},{"name":"Speed","value":95}],"image":"images/kyurem.jpg"},"params":{"id":"646"}},"__N_SSG":true}

@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Mew","type":["Psychic"],"stats":[{"name":"HP","value":100},{"name":"Attack","value":100},{"name":"Defense","value":100},{"name":"Special Attack","value":100},{"name":"Special Defense","value":100},{"name":"Speed","value":100}],"image":"images/mew.jpg"},"params":{"id":"151"}},"__N_SSG":true}

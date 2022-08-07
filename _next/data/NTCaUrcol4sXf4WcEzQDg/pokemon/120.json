@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Staryu","type":["Water"],"stats":[{"name":"HP","value":30},{"name":"Attack","value":45},{"name":"Defense","value":55},{"name":"Special Attack","value":70},{"name":"Special Defense","value":55},{"name":"Speed","value":85}],"image":"images/staryu.jpg"},"params":{"id":"120"}},"__N_SSG":true}

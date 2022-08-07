@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Lileep","type":["Rock","Grass"],"stats":[{"name":"HP","value":66},{"name":"Attack","value":41},{"name":"Defense","value":77},{"name":"Special Attack","value":61},{"name":"Special Defense","value":87},{"name":"Speed","value":23}],"image":"images/lileep.jpg"},"params":{"id":"345"}},"__N_SSG":true}

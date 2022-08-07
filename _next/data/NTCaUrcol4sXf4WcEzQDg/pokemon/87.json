@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Dewgong","type":["Water","Ice"],"stats":[{"name":"HP","value":90},{"name":"Attack","value":70},{"name":"Defense","value":80},{"name":"Special Attack","value":70},{"name":"Special Defense","value":95},{"name":"Speed","value":70}],"image":"images/dewgong.jpg"},"params":{"id":"87"}},"__N_SSG":true}

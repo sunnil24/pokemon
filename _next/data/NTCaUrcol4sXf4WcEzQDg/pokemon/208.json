@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Steelix","type":["Steel","Ground"],"stats":[{"name":"HP","value":75},{"name":"Attack","value":85},{"name":"Defense","value":200},{"name":"Special Attack","value":55},{"name":"Special Defense","value":65},{"name":"Speed","value":30}],"image":"images/steelix.jpg"},"params":{"id":"208"}},"__N_SSG":true}

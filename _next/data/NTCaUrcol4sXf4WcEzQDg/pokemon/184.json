@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Azumarill","type":["Water","Fairy"],"stats":[{"name":"HP","value":100},{"name":"Attack","value":50},{"name":"Defense","value":80},{"name":"Special Attack","value":60},{"name":"Special Defense","value":80},{"name":"Speed","value":50}],"image":"images/azumarill.jpg"},"params":{"id":"184"}},"__N_SSG":true}

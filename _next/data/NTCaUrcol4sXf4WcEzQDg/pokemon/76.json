@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Golem","type":["Rock","Ground"],"stats":[{"name":"HP","value":80},{"name":"Attack","value":120},{"name":"Defense","value":130},{"name":"Special Attack","value":55},{"name":"Special Defense","value":65},{"name":"Speed","value":45}],"image":"images/golem.jpg"},"params":{"id":"76"}},"__N_SSG":true}

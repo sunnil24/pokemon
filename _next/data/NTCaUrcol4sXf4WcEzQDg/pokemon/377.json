@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Regirock","type":["Rock"],"stats":[{"name":"HP","value":80},{"name":"Attack","value":100},{"name":"Defense","value":200},{"name":"Special Attack","value":50},{"name":"Special Defense","value":100},{"name":"Speed","value":50}],"image":"images/regirock.jpg"},"params":{"id":"377"}},"__N_SSG":true}

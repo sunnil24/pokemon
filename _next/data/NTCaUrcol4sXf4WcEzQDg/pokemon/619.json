@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Mienfoo","type":["Fighting"],"stats":[{"name":"HP","value":45},{"name":"Attack","value":85},{"name":"Defense","value":50},{"name":"Special Attack","value":55},{"name":"Special Defense","value":50},{"name":"Speed","value":65}],"image":"images/mienfoo.jpg"},"params":{"id":"619"}},"__N_SSG":true}

@@ -1,0 +1,1 @@
+{"pageProps":{"pokemon":{"name":"Nincada","type":["Bug","Ground"],"stats":[{"name":"HP","value":31},{"name":"Attack","value":45},{"name":"Defense","value":90},{"name":"Special Attack","value":30},{"name":"Special Defense","value":30},{"name":"Speed","value":40}],"image":"images/nincada.jpg"},"params":{"id":"290"}},"__N_SSG":true}
