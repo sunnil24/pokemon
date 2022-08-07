@@ -6,7 +6,6 @@ const nextConfig = {
   images: {
     loader: "custom",
   },
-  assetPrefix: "/pokemon",
   trailingSlash: true,
 };
 
