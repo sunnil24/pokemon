@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o build/",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "next build && next export -o build/",
-    "deploy": "gh-pages -d build"
+    "predeploy": "next build && next export"
   },
   "dependencies": {
     "next": "12.2.3",

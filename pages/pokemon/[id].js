@@ -43,7 +43,7 @@ export default function Home({ pokemon }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{name}</title>
+        <title>{name} | Pokemon</title>
       </Head>
 
       <main className={styles.main}>

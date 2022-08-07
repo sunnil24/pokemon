@@ -44,7 +44,7 @@ export default function Home({ pokemons }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Pokemon Demo</title>
+        <title>Pokemon | Home</title>
       </Head>
 
       <main className={styles.main}>
