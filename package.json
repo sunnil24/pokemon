@@ -2,8 +2,7 @@
   "name": "pokemon",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sunnil24.github.io/pokemon",
-  "scripts": {
+  ntl init  "scripts": {
     "dev": "next dev",
     "build": "next build && next export -o build/",
     "start": "next start",
@@ -22,6 +21,7 @@
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.3",
     "gh-pages": "^4.0.0",
+    "netlify-cli": "^10.15.0",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.8"
   }
