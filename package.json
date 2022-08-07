@@ -5,11 +5,11 @@
   "homepage": "https://sunnil24.github.io/pokemon",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next export -o build/",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "predeploy": "next build && next export -o build/",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "next": "12.2.3",
