@@ -6,7 +6,8 @@ import { API_POKEMON_IMAGE, MIN_POKEMON_ON_PAGE } from "../src/constants/api";
 import styles from "../styles/Home.module.css";
 import Search from "../src/components/search";
 import classNames from "classnames";
-import { loadPokemons } from "../src/utils";
+import { imageLoader, loadPokemons } from "../src/utils";
+import Image from "next/image";
 
 // export async function getServerSideProps() {
 //   const data = await fetch(API_ENDPOINT_POKEMON_LIST);
@@ -27,12 +28,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ pokemons }) {
-  const [pokemonList, updatePokenList] = useState([]);
   const [currentCount, setCurrentCount] = useState(MIN_POKEMON_ON_PAGE);
-
-  useEffect(() => {
-    updatePokenList(pokemons);
-  }, [pokemons]);
 
   const handleSearch = (text) => {
     const regex = new RegExp(text, "ig");
@@ -43,7 +39,7 @@ export default function Home({ pokemons }) {
     setCurrentCount(currentCount + MIN_POKEMON_ON_PAGE);
   }, [currentCount]);
 
-  const paginationPokmon = pokemonList.slice(0, currentCount);
+  const paginationPokmon = pokemons.slice(0, currentCount);
 
   return (
     <div className={styles.container}>
@@ -56,15 +52,21 @@ export default function Home({ pokemons }) {
         <Search searchHandler={handleSearch} />
         <div className={styles.grid}>
           {paginationPokmon.map(({ id, image, name }) => (
-            <Link href={`/pokemon/${encodeURIComponent(id)}`} key={id}>
+            <Link href={`./pokemon/${encodeURIComponent(id)}`} key={id}>
               <a className={styles.card}>
-                <img src={`${API_POKEMON_IMAGE}/${image}`} alt={name} />
+                <Image
+                  src={image}
+                  alt={name}
+                  loader={imageLoader}
+                  width="300"
+                  height="300"
+                />
                 <h2>{name}</h2>
               </a>
             </Link>
           ))}
         </div>
-        {pokemonList.length > currentCount && (
+        {pokemons.length > currentCount && (
           <button className={styles.loadmore} onClick={handlePagination}>
             Load More
           </button>
