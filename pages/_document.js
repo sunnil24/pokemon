@@ -16,10 +16,13 @@ export default function Document() {
           media="(prefers-color-scheme: dark)"
         />
         <meta name="color-scheme" content="dark light" />
+        <script src="/scripts.js" defer />
       </Head>
       <body>
-        <Main />
-        <NextScript />
+        <div id="page">
+          <Main />
+          <NextScript />
+        </div>
       </body>
     </Html>
   );

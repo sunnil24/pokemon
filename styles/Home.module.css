@@ -66,13 +66,15 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: rgb(22 163 74);
+  border-color: rgb(22 163 74);
 }
 
 .card img {

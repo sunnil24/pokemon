@@ -49,7 +49,6 @@ export default function Home({ pokemons }) {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={classNames(styles.title)}>Favorite Pokemon</h1>
         <Search searchHandler={handleSearch} />
         <div className={styles.grid}>
           {paginationPokmon.map(({ id, image, name }) => (

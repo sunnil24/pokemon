@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { API_POKEMON_IMAGE } from "../../src/constants/api";
-import { loadPokemonDetails, loadPokemons } from "../../src/utils";
+import { imageLoader, loadPokemonDetails, loadPokemons } from "../../src/utils";
 
 import styles from "../../styles/Home.module.css";
 
@@ -52,10 +53,12 @@ export default function Home({ pokemon }) {
             <tbody>
               <tr className="border-b">
                 <td className="px-6 py-4" colSpan={2}>
-                  <img
-                    src={`${API_POKEMON_IMAGE}/${image}`}
+                  <Image
+                    src={image}
                     alt={name}
-                    width="200"
+                    loader={imageLoader}
+                    width="300"
+                    height="300"
                   />
                 </td>
               </tr>

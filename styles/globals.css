@@ -2,12 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Light mode */
+  --light-text: #222430;
+  --light-bg: #f7f7f7;
+  --light-theme: #d34a97;
+  --light-switch-shadow: #373d4e;
+  --light-switch-icon: "🌚";
+  --light-switch-text: "dark mode?";
+
+  /* Dark mode */
+  --dark-text: #f7f7f7;
+  --dark-bg: #222430;
+  --dark-theme: #bd93f9;
+  --dark-switch-shadow: #fce477;
+  --dark-switch-icon: "🌝";
+  --dark-switch-text: "light mode?";
+
+  /* Default mode */
+  --text-color: var(--light-text);
+  --bg-color: var(--light-bg);
+  --theme-color: var(--light-theme);
+  --switch-shadow-color: var(--light-switch-shadow);
+  --switch-icon: var(--light-switch-icon);
+  --switch-text: var(--light-switch-text);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+
+  --switch-shadow-color: var(--light-switch-shadow);
+  --switch-icon: var(--light-switch-icon);
+  --switch-text: var(--light-switch-text);
+}
+
+#theme-switch {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.switch-label::before {
+  content: var(--switch-icon);
+  font-size: 20px;
+  transition: text-shadow 0.2s;
+  line-height: 1;
+  margin-right: 0.25rem;
+}
+
+.switch-label::after {
+  content: var(--switch-text);
+  color: var(--switch-shadow-color);
 }
 
 a {
@@ -19,12 +72,40 @@ a {
   box-sizing: border-box;
 }
 
+header {
+  border-bottom: 1px solid;
+}
+
+.dark-mode {
+  --text-color: var(--dark-text);
+  --bg-color: var(--dark-bg);
+  --theme-color: var(--light-theme);
+
+  --switch-shadow-color: var(--dark-switch-shadow);
+  --switch-icon: var(--dark-switch-icon);
+  --switch-text: var(--dark-switch-text);
+}
+
+.dark-mode .switch-label::before,
+.switch-label:hover::before {
+  text-shadow: 0 0 15px var(--switch-shadow-color);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    background: var(--dark-bg);
+    color: var(--dark-text);
+  }
+
+  img {
+    filter: brightness(0.8) contrast(1.2);
   }
 }
