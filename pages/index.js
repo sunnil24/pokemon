@@ -33,7 +33,7 @@ export default function Home({ pokemons }) {
 
   const handleSearch = (text) => {
     const regex = new RegExp(text, "ig");
-    updatePokenList(pokemonList.filter((pokemon) => regex.test(pokemon.name)));
+    updatePokenList(pokemons.filter((pokemon) => regex.test(pokemon.name)));
   };
 
   const handlePagination = useCallback(() => {
