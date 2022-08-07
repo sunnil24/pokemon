@@ -28,18 +28,19 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ pokemons }) {
+  const [pokemonList, updatePokenList] = useState(pokemons);
   const [currentCount, setCurrentCount] = useState(MIN_POKEMON_ON_PAGE);
 
   const handleSearch = (text) => {
     const regex = new RegExp(text, "ig");
-    updatePokenList(pokemons.filter((pokemon) => regex.test(pokemon.name)));
+    updatePokenList(pokemonList.filter((pokemon) => regex.test(pokemon.name)));
   };
 
   const handlePagination = useCallback(() => {
     setCurrentCount(currentCount + MIN_POKEMON_ON_PAGE);
   }, [currentCount]);
 
-  const paginationPokmon = pokemons.slice(0, currentCount);
+  const paginationPokmon = pokemonList.slice(0, currentCount);
 
   return (
     <div className={styles.container}>
@@ -66,7 +67,7 @@ export default function Home({ pokemons }) {
             </Link>
           ))}
         </div>
-        {pokemons.length > currentCount && (
+        {pokemonList.length > currentCount && (
           <button className={styles.loadmore} onClick={handlePagination}>
             Load More
           </button>
