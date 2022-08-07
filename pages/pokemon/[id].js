@@ -1,20 +1,37 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Link from "next/link";
-import {
-  API_ENDPOINT_POKEMON_LIST,
-  API_POKEMON_IMAGE,
-} from "../../src/constants/api";
+import { API_POKEMON_IMAGE } from "../../src/constants/api";
+import { loadPokemonDetails, loadPokemons } from "../../src/utils";
 
 import styles from "../../styles/Home.module.css";
 
-export async function getServerSideProps({ params }) {
-  const data = await fetch(
-    API_ENDPOINT_POKEMON_LIST.replace(/index/i, `pokemon/${params.id}`)
-  );
+// export async function getServerSideProps({ params }) {
+//   const data = await fetch(
+//     API_ENDPOINT_POKEMON_LIST.replace(/index/i, `pokemon/${params.id}`)
+//   );
+//   return {
+//     props: {
+//       pokemon: await data.json(),
+//       params,
+//     },
+//   };
+// }
+
+export async function getStaticPaths() {
+  const pokemons = await loadPokemons();
+  const paths = pokemons.map((pokemon) => ({
+    params: { id: `${pokemon.id}` },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const pokemon = await loadPokemonDetails(params);
   return {
     props: {
-      pokemon: await data.json(),
+      pokemon,
       params,
     },
   };

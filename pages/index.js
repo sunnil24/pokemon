@@ -2,20 +2,26 @@
 import Head from "next/head";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  API_ENDPOINT_POKEMON_LIST,
-  API_POKEMON_IMAGE,
-  MIN_POKEMON_ON_PAGE,
-} from "../src/constants/api";
+import { API_POKEMON_IMAGE, MIN_POKEMON_ON_PAGE } from "../src/constants/api";
 import styles from "../styles/Home.module.css";
 import Search from "../src/components/search";
 import classNames from "classnames";
+import { loadPokemons } from "../src/utils";
 
-export async function getServerSideProps() {
-  const data = await fetch(API_ENDPOINT_POKEMON_LIST);
+// export async function getServerSideProps() {
+//   const data = await fetch(API_ENDPOINT_POKEMON_LIST);
+//   return {
+//     props: {
+//       pokemons: await data.json(),
+//     },
+//   };
+// }
+
+export async function getStaticProps(context) {
+  const pokemons = await loadPokemons();
   return {
     props: {
-      pokemons: await data.json(),
+      pokemons,
     },
   };
 }
