@@ -61,14 +61,14 @@ export default function Home({ pokemon }) {
               </tr>
               <tr className="border-b">
                 <td className="px-6 py-4">Name</td>
-                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <td className="text-sm font-light px-6 py-4 whitespace-nowrap">
                   <h2>{name}</h2>
                 </td>
               </tr>
               <tr className="border-b">
                 <td className="px-6 py-4">Type</td>
-                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                  <ol>
+                <td className="text-sm font-light px-6 py-4 whitespace-nowrap">
+                  <ol className="list-decimal">
                     {type.map((tp, tpid) => (
                       <li key={`type-${tpid}-${tp}`}>{tp}</li>
                     ))}
@@ -77,8 +77,8 @@ export default function Home({ pokemon }) {
               </tr>
               <tr className="border-b">
                 <td className="px-6 py-4">States</td>
-                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                  <ol>
+                <td className="text-sm font-light px-6 py-4 whitespace-nowrap">
+                  <ol className="list-decimal">
                     {stats?.map(({ name, value }) => (
                       <li key={`states-${name}-${value}`}>
                         {name}: {value}
