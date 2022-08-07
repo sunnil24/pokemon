@@ -2,7 +2,7 @@
   "name": "pokemon",
   "version": "0.1.0",
   "private": true,
-  ntl init  "scripts": {
+  "scripts": {
     "dev": "next dev",
     "build": "next build && next export -o build/",
     "start": "next start",
