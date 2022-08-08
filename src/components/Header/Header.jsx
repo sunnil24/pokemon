@@ -5,7 +5,7 @@ import styles from "../../../styles/Header.module.css";
 
 const Header = () => {
   return (
-    <header>
+    <header className="dark:bg-slate-900 shadow-sm">
       <div className={styles.container}>
         <h1 className={styles.logo}>Pokemon</h1>
         <label htmlFor="theme-switch">

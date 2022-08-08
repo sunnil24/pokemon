@@ -5,15 +5,15 @@
 :root {
   /* Light mode */
   --light-text: #222430;
-  --light-bg: #f7f7f7;
+  --light-bg: floralwhite;
   --light-theme: #d34a97;
   --light-switch-shadow: #373d4e;
   --light-switch-icon: "🌚";
   --light-switch-text: "dark mode?";
 
   /* Dark mode */
-  --dark-text: #f7f7f7;
-  --dark-bg: #222430;
+  --dark-text: floralwhite;
+  --dark-bg: #252835;
   --dark-theme: #bd93f9;
   --dark-switch-shadow: #fce477;
   --dark-switch-icon: "🌝";
@@ -73,10 +73,10 @@ a {
 }
 
 header {
-  border-bottom: 1px solid;
+  background-color: #eee2ca;
 }
 
-.dark-mode {
+.dark {
   --text-color: var(--dark-text);
   --bg-color: var(--dark-bg);
   --theme-color: var(--light-theme);
@@ -86,9 +86,13 @@ header {
   --switch-text: var(--dark-switch-text);
 }
 
-.dark-mode .switch-label::before,
+.dark .switch-label::before,
 .switch-label:hover::before {
   text-shadow: 0 0 15px var(--switch-shadow-color);
+}
+
+.dark img {
+  filter: brightness(0.8) contrast(1.2);
 }
 
 img {
@@ -97,6 +101,9 @@ img {
 }
 
 @media (prefers-color-scheme: dark) {
+  label[for="theme-switch"] {
+    display: none;
+  }
   html {
     color-scheme: dark;
   }

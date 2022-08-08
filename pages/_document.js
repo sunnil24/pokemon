@@ -19,10 +19,8 @@ export default function Document() {
         <script src="/scripts.js" defer />
       </Head>
       <body>
-        <div id="page">
-          <Main />
-          <NextScript />
-        </div>
+        <Main />
+        <NextScript />
       </body>
     </Html>
   );
