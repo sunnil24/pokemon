@@ -14,7 +14,7 @@
 }
 
 .logo span::before {
-  content: "<Handson />";
+  content: "<Hands-on />";
   font-family: monospace;
   font-size: 30px;
   display: block;
