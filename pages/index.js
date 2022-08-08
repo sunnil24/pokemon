@@ -49,6 +49,7 @@ export default function Home({ pokemons }) {
       </Head>
 
       <main className={styles.main}>
+        <h3 className={styles.title}>Pokemon</h3>
         <Search searchHandler={handleSearch} />
         <div className={styles.grid}>
           {paginationPokmon.map(({ id, image, name }) => (
