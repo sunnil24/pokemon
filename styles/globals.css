@@ -112,6 +112,10 @@ img {
     color: var(--dark-text);
   }
 
+  header {
+    background-color: rgb(15 23 42);
+  }
+
   img {
     filter: brightness(0.8) contrast(1.2);
   }
