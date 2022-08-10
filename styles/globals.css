@@ -100,6 +100,14 @@ img {
   height: auto;
 }
 
+.card {
+  background-image: linear-gradient(to bottom, #eee2ca, #fffaf0);
+}
+
+.dark .card {
+  background-image: linear-gradient(to bottom, rgb(15 23 42), #252835);
+}
+
 @media (prefers-color-scheme: dark) {
   label[for="theme-switch"] {
     display: none;
@@ -118,5 +126,9 @@ img {
 
   img {
     filter: brightness(0.8) contrast(1.2);
+  }
+
+  .dark .card {
+    background-image: linear-gradient(to bottom, rgb(15 23 42), #252835);
   }
 }

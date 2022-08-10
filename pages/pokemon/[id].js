@@ -49,7 +49,7 @@ export default function Home({ pokemon }) {
 
       <main className={styles.main}>
         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <table className="min-w-full border">
+          <table className="min-w-full card rounded-lg">
             <tbody>
               <tr className="border-b">
                 <td className="px-6 py-4" colSpan={2}>
@@ -78,7 +78,7 @@ export default function Home({ pokemon }) {
                   </ol>
                 </td>
               </tr>
-              <tr className="border-b">
+              <tr className="">
                 <td className="px-6 py-4">States</td>
                 <td className="text-sm font-light px-6 py-4 whitespace-nowrap">
                   <ol className="list-decimal">

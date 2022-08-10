@@ -54,7 +54,7 @@ export default function Home({ pokemons }) {
         <div className={styles.grid}>
           {paginationPokmon.map(({ id, image, name }) => (
             <Link href={`./pokemon/${encodeURIComponent(id)}`} key={id}>
-              <a className={styles.card}>
+              <a className={classNames(styles.card, "card")}>
                 <Image
                   src={image}
                   alt={name}

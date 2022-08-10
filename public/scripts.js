@@ -1,6 +1,10 @@
 const themeSwitch = document.querySelector("#theme-switch");
 themeSwitch.checked = localStorage.getItem("switchedTheme") === "true";
 
+if (themeSwitch.checked) {
+  document.body.classList.add("dark");
+}
+
 themeSwitch.addEventListener("change", function (e) {
   if (e.currentTarget.checked === true) {
     document.body.classList.add("dark");
