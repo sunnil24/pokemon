@@ -108,9 +108,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
+  .card {
     border-color: #222;
+    background-image: linear-gradient(to bottom, rgb(15 23 42), #252835);
   }
   .code {
     background: #111;

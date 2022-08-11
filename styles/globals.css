@@ -128,7 +128,7 @@ img {
     filter: brightness(0.8) contrast(1.2);
   }
 
-  .dark .card {
+  .card {
     background-image: linear-gradient(to bottom, rgb(15 23 42), #252835);
   }
 }
