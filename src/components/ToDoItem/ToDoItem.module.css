@@ -1,10 +1,18 @@
 .edit {
-  color: blue;
   font-weight: 500;
   margin-left: auto;
 }
 
 .delete {
-  color: red;
   font-weight: 500;
+}
+
+.todoText {
+  width: 500px;
+}
+
+@media screen and (max-width: 400px) {
+  .todoText {
+    width: 320px;
+  }
 }

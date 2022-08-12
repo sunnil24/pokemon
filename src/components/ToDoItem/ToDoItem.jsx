@@ -46,7 +46,7 @@ const ToDoItem = ({ item, toggleHandler, deleteHandler, editHandler }) => {
         onClick={() => {
           toggleHandler(item.id);
         }}
-        className="todo-text"
+        className={styles.todoText}
       >
         <input
           className="default:ring-2 checked:bg-green-500  mr-2 cursor-pointer"
@@ -58,7 +58,7 @@ const ToDoItem = ({ item, toggleHandler, deleteHandler, editHandler }) => {
           id={`todo-checkbox-${item.id}`}
         />
         <label
-          className="form-check-label inline-block text-gray-800"
+          className="form-check-label"
           htmlFor={`todo-checkbox-${item.id}`}
         >
           {item.title}

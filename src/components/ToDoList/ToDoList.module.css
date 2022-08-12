@@ -1,18 +1,35 @@
 .todoList li div {
   cursor: pointer;
   border-bottom: 1px solid #ccc;
-  padding: 8px;
+  padding: 12px 8px;
   display: flex;
   justify-content: flex-end;
   grid-gap: 0 16px;
+  position: relative;
+}
+
+.todoList li div:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  border-bottom: 1px solid #ccc;
+  left: -25px;
+  bottom: -1px;
 }
 
 .todoList li textarea {
   margin-right: auto;
+  width: 100%;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 2px solid #0f7b2a;
+  resize: none;
 }
 
 .todoList li:hover {
-  background-color: bisque;
+  /* font-weight: 500; */
 }
 
 .todoList li:last-child {
@@ -38,4 +55,11 @@
 
 .pagination {
   display: flex;
+}
+
+@media screen and (max-width: 400px) {
+  .todoList li div {
+    /* width: max(100% - 2rem); */
+    /* margin: 0 auto; */
+  }
 }
