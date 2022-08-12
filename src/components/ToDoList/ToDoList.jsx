@@ -11,10 +11,6 @@ export default function ToDoList() {
   const [page, setPage] = useState(1);
   const { todos } = state;
 
-  useEffect(() => {
-    fetchToDos(dispatch);
-  }, []);
-
   const toggleToDo = useCallback(
     (id) => {
       const newData = todos.map((item) => {

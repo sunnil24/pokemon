@@ -7,11 +7,14 @@ const initialState = {
 
 const StoreContext = createContext();
 
-const StoreProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(todoReducer, initialState);
+const StoreProvider = ({ children, todos }) => {
+  const [state, dispatch] = useReducer(todoReducer, {
+    ...initialState,
+    todos,
+  });
 
   return (
-    <StoreContext.Provider value={{ state, dispatch, newValue: 1 }}>
+    <StoreContext.Provider value={{ state, dispatch }}>
       {children}
     </StoreContext.Provider>
   );
