@@ -8,7 +8,7 @@
   --light-bg: floralwhite;
   --light-theme: #d34a97;
   --light-switch-shadow: #373d4e;
-  --light-switch-icon: "🌚";
+  --light-switch-icon: "🌝";
   --light-switch-text: "dark mode?";
 
   /* Dark mode */
@@ -16,8 +16,8 @@
   --dark-bg: #252835;
   --dark-theme: #bd93f9;
   --dark-switch-shadow: #fce477;
-  --dark-switch-icon: "🌝";
   --dark-switch-text: "light mode?";
+  --dark-switch-icon: "🌚";
 
   /* Default mode */
   --text-color: var(--light-text);
@@ -50,17 +50,43 @@ body {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+.switch-label {
+  width: 46px;
+  background: white;
+  display: flex;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 1px var(--theme-color);
+  height: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
 .switch-label::before {
-  content: var(--switch-icon);
-  font-size: 20px;
-  transition: text-shadow 0.2s;
+  content: "";
+  font-size: 24px;
+  transition: all 0.2s;
   line-height: 1;
-  margin-right: 0.25rem;
+  width: 24px;
+  height: 24px;
+  background-color: #0000008c;
+  border-radius: 100%;
 }
 
 .switch-label::after {
   content: var(--switch-text);
   color: var(--switch-shadow-color);
+  position: absolute;
+  top: 24px;
+  font-size: x-small;
+  width: 60px;
+}
+
+#theme-switch:checked + span:before {
+  position: relative;
+  left: 23px;
 }
 
 a {
@@ -116,8 +142,13 @@ img {
     color-scheme: dark;
   }
   body {
-    background: var(--dark-bg);
-    color: var(--dark-text);
+    --text-color: var(--dark-text);
+    --bg-color: var(--dark-bg);
+    --theme-color: var(--light-theme);
+
+    --switch-shadow-color: var(--dark-switch-shadow);
+    --switch-icon: var(--dark-switch-icon);
+    --switch-text: var(--dark-switch-text);
   }
 
   header {

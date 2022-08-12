@@ -93,7 +93,7 @@ export default function Home({ pokemon }) {
             </tbody>
           </table>
         </div>
-        <Link href="/">
+        <Link href="/pokemon">
           <a className="inline-block mt-6 px-6 pt-2.5 pb-2 bg-green-600 text-white font-medium text-xs leading-normal uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out flex align-center">
             Back to home
           </a>

@@ -1,0 +1,14 @@
+.logo {
+  font-size: 12px;
+  line-height: 1.2;
+  font-family: system-ui;
+  text-align: center;
+  margin-right: auto;
+}
+
+.logo span::before {
+  content: "<Hands-on />";
+  font-family: monospace;
+  font-size: 30px;
+  display: block;
+}

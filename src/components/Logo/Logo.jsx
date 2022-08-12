@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import styles from "../../../styles/Header.module.css";
+import styles from "./Logo.module.css";
 
 function Logo() {
   return (
