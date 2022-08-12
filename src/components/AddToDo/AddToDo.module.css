@@ -1,0 +1,17 @@
+.todoHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 3em;
+}
+
+.addToDo {
+  display: flex;
+  grid-gap: 1em;
+  align-items: center;
+}
+
+.textarea {
+  padding: 0.5rem;
+  resize: none;
+}

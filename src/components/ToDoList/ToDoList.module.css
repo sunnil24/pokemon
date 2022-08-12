@@ -1,0 +1,41 @@
+.todoList li div {
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+  display: flex;
+  justify-content: flex-end;
+  grid-gap: 0 16px;
+}
+
+.todoList li textarea {
+  margin-right: auto;
+}
+
+.todoList li:hover {
+  background-color: bisque;
+}
+
+.todoList li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.completed .todo-text {
+  text-decoration: line-through;
+}
+
+.loadMore {
+  width: 100px;
+  background-color: blue;
+  border: none;
+  padding: 1rem 0.5rem;
+  color: white;
+  margin: 1rem auto;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+}

@@ -17,6 +17,11 @@ const Nav = () => {
               <a className="text-white-500 hover:text-white-800"> Pokemon </a>
             </Link>
           </li>
+          <li className="mr-6">
+            <Link href="/todo">
+              <a className="text-white-500 hover:text-white-800"> Todo </a>
+            </Link>
+          </li>
         </ul>
         <div className="block">
           <button className="flex items-center px-3 py-2 border rounded text-white-200 border-white-400 hover:text-white hover:border-white">
