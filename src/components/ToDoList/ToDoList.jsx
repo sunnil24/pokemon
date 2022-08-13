@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useContext } from "react";
-import { StoreContext, actions } from "../../store";
+import { StoreContext, actions } from "../../store/index";
 import styles from "./ToDoList.module.css";
 
 import ToDoItem from "../ToDoItem";

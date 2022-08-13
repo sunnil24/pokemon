@@ -33,9 +33,8 @@ const Todo = ({ todos }) => {
 
       <main className={styles.main}>
         <StoreProvider todos={todos}>
-          <h2>Todo App</h2>
-          {/* <AddToDo />
-          <ToDoList /> */}
+          <AddToDo />
+          <ToDoList />
         </StoreProvider>
       </main>
     </div>

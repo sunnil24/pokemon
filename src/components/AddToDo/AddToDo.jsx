@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useContext } from "react";
-import { StoreContext, actions } from "../../store";
+import { StoreContext, actions } from "../../store/index";
 import styles from "./AddToDo.module.css";
 import { FaSave } from "react-icons/fa";
 
