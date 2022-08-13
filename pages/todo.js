@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-
-import classNames from "classnames";
 import { StoreProvider } from "../src/store";
 import AddToDo from "../src/components/AddToDo";
 import ToDoList from "../src/components/ToDoList";
@@ -35,8 +33,9 @@ const Todo = ({ todos }) => {
 
       <main className={styles.main}>
         <StoreProvider todos={todos}>
-          <AddToDo />
-          <ToDoList />
+          <h2>Todo App</h2>
+          {/* <AddToDo />
+          <ToDoList /> */}
         </StoreProvider>
       </main>
     </div>
