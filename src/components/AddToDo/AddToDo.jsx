@@ -1,8 +1,9 @@
 import React, { useState, useCallback, useContext } from "react";
-import { StoreContext } from "../../store";
-import { addToDoItem } from "../../store/actions";
+import { StoreContext, actions } from "../../store";
 import styles from "./AddToDo.module.css";
-import { FaEdit, FaTrashAlt, FaTimes, FaSave } from "react-icons/fa";
+import { FaSave } from "react-icons/fa";
+
+const { addToDoItem } = actions;
 
 const AddToDo = () => {
   const { state, dispatch } = useContext(StoreContext);
@@ -37,7 +38,7 @@ const AddToDo = () => {
             rows="4"
             cols="30"
             className={styles.textarea}
-            autoComplete={false}
+            autoComplete="false"
           />
           <button type="submit">
             <FaSave />

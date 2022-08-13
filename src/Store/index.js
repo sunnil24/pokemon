@@ -1,5 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import todoReducer from "./reducers";
+import * as actions from "./actions";
 
 const initialState = {
   todos: [],
@@ -20,4 +21,4 @@ const StoreProvider = ({ children, todos }) => {
   );
 };
 
-export { initialState, StoreContext, StoreProvider };
+export { initialState, StoreContext, StoreProvider, actions };

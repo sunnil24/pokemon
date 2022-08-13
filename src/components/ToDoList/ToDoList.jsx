@@ -1,10 +1,11 @@
-import React, { useEffect, useCallback, useState, useContext } from "react";
-import { StoreContext } from "../../store";
-import { fetchToDos, updateToDos } from "../../store/actions";
+import React, { useCallback, useState, useContext } from "react";
+import { StoreContext, actions } from "../../store";
 import styles from "./ToDoList.module.css";
 
 import ToDoItem from "../ToDoItem";
 import classNames from "classnames";
+
+const { updateToDos } = actions;
 
 export default function ToDoList() {
   const { state, dispatch } = useContext(StoreContext);
