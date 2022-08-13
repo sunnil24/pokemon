@@ -1,201 +1,89 @@
-import { skipWaiting, clientsClaim } from "workbox-core";
-import { ExpirationPlugin } from "workbox-expiration";
-import {
-  NetworkOnly,
-  NetworkFirst,
-  CacheFirst,
-  StaleWhileRevalidate,
-} from "workbox-strategies";
-import {
-  registerRoute,
-  setDefaultHandler,
-  setCatchHandler,
-} from "workbox-routing";
-import {
-  matchPrecache,
-  precacheAndRoute,
-  cleanupOutdatedCaches,
-} from "workbox-precaching";
-
-skipWaiting();
-clientsClaim();
-
-// must include following lines when using inject manifest module from workbox
-// https://developers.google.com/web/tools/workbox/guides/precache-files/workbox-build#add_an_injection_point
-const WB_MANIFEST = self.__WB_MANIFEST;
-// Precache fallback route and image
-WB_MANIFEST.push({
-  url: "/fallback",
-  revision: "1234567890",
-});
-precacheAndRoute(WB_MANIFEST);
-
-cleanupOutdatedCaches();
-registerRoute(
-  "/",
-  new NetworkFirst({
-    cacheName: "start-url",
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 1,
-        maxAgeSeconds: 86400,
-        purgeOnQuotaError: !0,
-      }),
-    ],
-  }),
-  "GET"
-);
-registerRoute(
-  /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
-  new CacheFirst({
-    cacheName: "google-fonts",
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 4,
-        maxAgeSeconds: 31536e3,
-        purgeOnQuotaError: !0,
-      }),
-    ],
-  }),
-  "GET"
-);
-registerRoute(
-  /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
-  new StaleWhileRevalidate({
-    cacheName: "static-font-assets",
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 4,
-        maxAgeSeconds: 604800,
-        purgeOnQuotaError: !0,
-      }),
-    ],
-  }),
-  "GET"
-);
-// disable image cache, so we could observe the placeholder image when offline
-registerRoute(
-  /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
-  new NetworkOnly({
-    cacheName: "static-image-assets",
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 64,
-        maxAgeSeconds: 86400,
-        purgeOnQuotaError: !0,
-      }),
-    ],
-  }),
-  "GET"
-);
-registerRoute(
-  /\.(?:js)$/i,
-  new StaleWhileRevalidate({
-    cacheName: "static-js-assets",
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 32,
-        maxAgeSeconds: 86400,
-        purgeOnQuotaError: !0,
-      }),
-    ],
-  }),
-  "GET"
-);
-registerRoute(
-  /\.(?:css|less)$/i,
-  new StaleWhileRevalidate({
-    cacheName: "static-style-assets",
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 32,
-        maxAgeSeconds: 86400,
-        purgeOnQuotaError: !0,
-      }),
-    ],
-  }),
-  "GET"
-);
-registerRoute(
-  /\.(?:json|xml|csv)$/i,
-  new NetworkFirst({
-    cacheName: "static-data-assets",
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 32,
-        maxAgeSeconds: 86400,
-        purgeOnQuotaError: !0,
-      }),
-    ],
-  }),
-  "GET"
-);
-registerRoute(
-  /\/api\/.*$/i,
-  new NetworkFirst({
-    cacheName: "apis",
-    networkTimeoutSeconds: 10,
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 16,
-        maxAgeSeconds: 86400,
-        purgeOnQuotaError: !0,
-      }),
-    ],
-  }),
-  "GET"
-);
-registerRoute(
-  /.*/i,
-  new NetworkFirst({
-    cacheName: "others",
-    networkTimeoutSeconds: 10,
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 32,
-        maxAgeSeconds: 86400,
-        purgeOnQuotaError: !0,
-      }),
-    ],
-  }),
-  "GET"
-);
-
-// following lines gives you control of the offline fallback strategies
-// https://developers.google.com/web/tools/workbox/guides/advanced-recipes#comprehensive_fallbacks
-
-// Use a stale-while-revalidate strategy for all other requests.
-setDefaultHandler(new StaleWhileRevalidate());
-
-// This "catch" handler is triggered when any of the other routes fail to
-// generate a response.
-setCatchHandler(({ event }) => {
-  // The FALLBACK_URL entries must be added to the cache ahead of time, either
-  // via runtime or precaching. If they are precached, then call
-  // `matchPrecache(FALLBACK_URL)` (from the `workbox-precaching` package)
-  // to get the response from the correct cache.
-  //
-  // Use event, request, and url to figure out how to respond.
-  // One approach would be to use request.destination, see
-  // https://medium.com/dev-channel/service-worker-caching-strategies-based-on-request-types-57411dd7652c
-  switch (event.request.destination) {
-    case "document":
-      // If using precached URLs:
-      return matchPrecache("/fallback");
-      // return caches.match('/fallback')
-      break;
-    case "image":
-      // If using precached URLs:
-      return matchPrecache("/static/images/fallback.png");
-      // return caches.match('/static/images/fallback.png')
-      break;
-    case "font":
-    // If using precached URLs:
-    // return matchPrecache(FALLBACK_FONT_URL);
-    // return caches.match('/static/fonts/fallback.otf')
-    // break
-    default:
-      // If we don't have a fallback, just return an error response.
-      return Response.error();
+const CACHE_NAME = "cache-v1";
+const registerServiceWorker = async () => {
+  if ("serviceWorker" in navigator) {
+    try {
+      const registration = await navigator.serviceWorker.register("./sw.js");
+      if (registration.installing) {
+        console.log("Service worker installing");
+      } else if (registration.waiting) {
+        console.log("Service worker installed");
+      } else if (registration.active) {
+        console.log("Service worker active");
+      }
+    } catch (error) {
+      console.error(`Registration failed with ${error}`);
+    }
   }
+};
+
+registerServiceWorker();
+
+const addResourcesToCache = async (resources) => {
+  const cache = await caches.open("cache-v1");
+  await cache.addAll(resources);
+  self.skipWaiting();
+};
+
+self.addEventListener("install", (event) => {
+  console.log("installed");
+  // event.waitUntil(
+  //   addResourcesToCache([
+  //     "/",
+  //     // "/index.html",
+  //     // "/style.css",
+  //     "/scripts.js",
+  //     // "https://jherr-pokemon.s3.us-west-1.amazonaws.com/*",
+  //   ])
+  // );
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      console.log(cacheNames, "--cacheNames");
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (CACHE_NAME !== cacheName) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+// self.addEventListener("fetch", (fetchEvent) => {
+//   fetchEvent.respondWith(
+//     fetchEvent.request
+//       .then((res) => {
+//         const cacheRes = res.clone();
+//         caches.open(CACHE_NAME).then((cache) => {
+//           debugger;
+//           cache.put(fetchEvent.request, cacheRes);
+//         });
+//         return res;
+//       })
+//       .catch(() => caches.match(fetchEvent.request).then((res) => res))
+//   );
+// });
+
+const putInCache = async (request, response) => {
+  const cache = await caches.open(CACHE_NAME);
+  await cache.put(request, response);
+  // cache.put(request, response);
+  // return respone;
+};
+
+const cacheFirst = async (request) => {
+  const responseFromCache = await caches.match(request);
+  if (responseFromCache) {
+    return responseFromCache;
+  }
+  const responseFromNetwork = await fetch(request);
+  putInCache(request, responseFromNetwork.clone());
+  return responseFromNetwork;
+};
+
+self.addEventListener("fetch", (event) => {
+  event.respondWith(cacheFirst(event.request));
 });

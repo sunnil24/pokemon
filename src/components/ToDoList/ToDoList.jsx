@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState, useContext } from "react";
-import { StoreContext } from "../../Store";
+import { StoreContext } from "../../store";
 import { fetchToDos, updateToDos } from "../../store/actions";
 import styles from "./ToDoList.module.css";
 
