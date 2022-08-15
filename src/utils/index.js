@@ -24,6 +24,10 @@ export const imageLoader = ({ src }) => {
   return `${API_POKEMON_IMAGE}/${src}`; // REPLACE WITH YOUR IMAGE DIRECTORY
 };
 
+export const publicImageLoader = ({ src }) => {
+  return src; // REPLACE WITH YOUR IMAGE DIRECTORY
+};
+
 export const loadToDos = async () => {
   const resp = await fetch(TODO_ENDPOINT);
   const todos = await resp.json();

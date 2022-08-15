@@ -2,6 +2,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import classNames from "classnames";
+import Image from "next/image";
+import { publicImageLoader } from "../src/utils";
 
 // export async function getServerSideProps() {
 //   const data = await fetch(API_ENDPOINT_POKEMON_LIST);
@@ -28,7 +30,9 @@ export default function Home({ pokemons }) {
         <title>HandsOn | Home</title>
       </Head>
 
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <img src="/" alt="" width="500px" loader={publicImageLoader} />
+      </main>
     </div>
   );
 }
