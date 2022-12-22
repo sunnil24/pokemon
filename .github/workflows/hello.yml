@@ -3,7 +3,7 @@ name: Hello
 on: [push]
 
 jobs:
-  build:
+  say-hello:
 
     runs-on: ubuntu-latest
 
